@@ -9,5 +9,10 @@
     tools:context=".LessonBasicInfoFragment"
     tools:showIn="@layout/activity_lesson_details">
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="강의 기본정보"/>
+
 
 </RelativeLayout>

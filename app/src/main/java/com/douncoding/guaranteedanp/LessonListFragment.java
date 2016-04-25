@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.text.Layout;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -80,12 +80,6 @@ public class LessonListFragment extends Fragment {
         return view;
     }
 
-    public void onButtonPressed(Uri uri) {
-        if (mListener != null) {
-            mListener.onFragmentInteraction(uri);
-        }
-    }
-
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
@@ -105,6 +99,7 @@ public class LessonListFragment extends Fragment {
 
     public interface OnFragmentInteractionListener {
         void onFragmentInteraction(Uri uri);
+        void onNavigateToDetailView();
     }
 
     public void generateDummyData() {
@@ -150,13 +145,24 @@ public class LessonListFragment extends Fragment {
             notifyDataSetChanged();
         }
 
-        public class ViewHolder extends RecyclerView.ViewHolder {
+        public class ViewHolder extends RecyclerView.ViewHolder
+                implements View.OnClickListener {
+
             TextView mNameText;
 
             public ViewHolder(View itemView) {
                 super(itemView);
 
                 mNameText = (TextView)itemView.findViewById(R.id.lesson_name);
+
+                itemView.setOnClickListener(this);
+            }
+
+            @Override
+            public void onClick(View v) {
+                if (mListener != null) {
+                    mListener.onNavigateToDetailView();
+                }
             }
         }
     }
