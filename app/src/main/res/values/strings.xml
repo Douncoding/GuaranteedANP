@@ -27,5 +27,5 @@
     <string name="lesson_create_basic_label">기본정보를 입력하세요</string>
     <string name="lesson_create_date_label">개강일자와 종강일자를 선택하세요</string>
     <string name="lesson_create_week_label">수업시간을 선택하세요</string>
-    <string name="lesson_create_submit">강의 개설</string>
+    <string name="lesson_create_submit">강의 개설</string>"
 </resources>

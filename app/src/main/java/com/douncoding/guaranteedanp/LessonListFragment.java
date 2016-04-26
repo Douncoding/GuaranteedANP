@@ -61,9 +61,6 @@ public class LessonListFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
-
-        mLayoutManager = new LinearLayoutManager(getContext());
-        mAdapter = new LessonListAdapter();
     }
 
     @Override
@@ -71,12 +68,14 @@ public class LessonListFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_lesson_list, container, false);
 
+        mLayoutManager = new LinearLayoutManager(getContext());
+        mAdapter = new LessonListAdapter();
+
         mLessonListView = (RecyclerView)view.findViewById(R.id.lesson_list);
         mLessonListView.setLayoutManager(mLayoutManager);
         mLessonListView.setAdapter(mAdapter);
 
         generateDummyData();
-
         return view;
     }
 

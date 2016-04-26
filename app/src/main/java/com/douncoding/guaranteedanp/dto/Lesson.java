@@ -17,12 +17,12 @@ public class Lesson implements Model {
     }
 
     @Override
-    public void decode() {
+    public void serialization() {
 
     }
 
     @Override
-    public void encode() {
+    public void deserialization() {
 
     }
 }

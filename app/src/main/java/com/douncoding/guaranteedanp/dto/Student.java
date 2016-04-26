@@ -6,12 +6,12 @@ package com.douncoding.guaranteedanp.dto;
 public class Student extends User implements Model {
 
     @Override
-    public void decode() {
+    public void serialization() {
 
     }
 
     @Override
-    public void encode() {
+    public void deserialization() {
 
     }
 }
